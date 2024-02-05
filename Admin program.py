@@ -1,5 +1,5 @@
-def login():
-    username=input("Enter username: ")
+def login():   #Enter username and password, if correct return True
+    username=input("Enter username: ")  #if not return False
     password=input("Enter password: ")
     f=open("Tutor accounts.txt")
     line=f.readline()
@@ -12,11 +12,11 @@ def login():
     return False
 
 def input_data():
-    details={}
-    valid=False
+    details={}  #Creates an empty dictionary
+    valid=False 
     f=open("Student details.txt")
-    line=f.readline()
-    if line=="":
+    line=f.readline()   #Read file to find out last ID in file,
+    if line=="":        #then add 1 for new file.
         ID=0
     while line:
         data=line.split(",")
@@ -25,11 +25,11 @@ def input_data():
     ID=int(ID)+1
     details["ID"]=ID
     details["surname"]=input("""--------------
-Enter surname: """)
+Enter surname: """) #input surname
     details["forename"]=input("""---------------
-Enter forename: """)
+Enter forename: """) #input forename
     valid=False
-    while not valid:
+    while not valid:  #input date of birth in form DD/MM/YY
         valid=True
         try:
             data=input("""-----------------------------------------
@@ -60,33 +60,33 @@ Invalid date.""")
             valid=False
     details["date"]=data
     details["address"]=input("""-------------------
-Enter home address: """)
+Enter home address: """) #input address
     details["phone"]=input("""------------------------
-Enter home phone number: """)
+Enter home phone number: """) #input phone number
     data="a"
     while data!="M" and data!="F" and data!="O":
         data=input("""----------------------------
-Enter gender (M/F/O(other)): """).upper()
+Enter gender (M/F/O(other)): """).upper() #input gender
     details["gender"]=data
     details["group"]=input("""------------------
-Enter tutor group: """)
+Enter tutor group: """) #input tutor group
     data="{},{},{},{},{},{},{},{}".format(details["ID"],details["surname"],details["forename"],details["date"],details["address"],details["phone"],details["gender"],details["group"])
-    f=open("Student details.txt","a")
+    f=open("Student details.txt","a") #input data to file
     f.write(data+"\n")
     f.close()
 
 def output_data():
-    search=input("Enter student ID:")
-    f=open("Student details.txt","r")
+    search=input("Enter student ID:") #ID in, data out
+    f=open("Student details.txt","r")  #read data from file
     line=f.readline()
     found=False
     while line and not found:
         data=line.split(',')
-        if data[0]==search:
+        if data[0]==search:  #print details
             print("""ID:           {}
 ----------------------------
 Surname:      {}
-----------------------------
+----------------------------  
 Forename:     {}
 ----------------------------
 Date of birth:{}
@@ -100,12 +100,12 @@ Gender:       {}
 Tutor Group:  {}""".format(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7]))
             found=True
         line=f.readline()
-    if not found:
+    if not found:  #if student doesn't exist, tell user
         print("""------------------
 Student not found.""")
 
 def report():
-    search=input("Enter student ID:")
+    search=input("Enter student ID:")  #output_data() but formatted and can add description
     f=open("Student details.txt","r")
     line=f.readline()
     found=False
@@ -122,7 +122,9 @@ Phone:{}
 Tutor Group:{}
 ---------------------------------------
 {}'''.format(data[1],data[2],data[0],data[6],data[5],data[7],description))
-        
+
+#Start of main program
+
 access=False
 while not access:
     access=login()
