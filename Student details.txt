@@ -1,0 +1,12 @@
+1,Smitheringale,Thomas,24/01/07,no,no,M,Leeman
+2,Smith,John,03/10/07,house,phone,M,Leeman
+3,Pillar,John,07/07/07,Pizza Road,00000000,M,Leeman
+4,surname,Jessica,15/01/07,nope,010101010101,F,Leeman
+5,Person,Real,12/04/57,Mars Street,319058782908572097190764901574,O,Leeman
+6,abcdefghijklm,nopqrstuvwxyz,01/05/07,abcdefghijklmnopqrstreet,abcdefghijklmnophone,F,Leeman
+7,boop,beep,01/11/01,01110101000101010111010000101101101001,0101101001001010010101011110001101010,O,Leeman
+8,Newton,Issac,27/12/08,Apple Lane,1234567890,M,Leeman
+9,mmmmmmmmmmm,mmmmmmmmmmmmmm,01/01/01,mmmmmmmmm,beeeep beeeep beeeep,M,Leeman
+10,4,3,02/02/02,1,0,F,Leeman
+11,Stinky,You're,23/11/07,haha,0512646373785,M,Leeman
+12,Surname,Forename,13/06/07,Address,Phone,M,Leeman
