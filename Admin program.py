@@ -104,6 +104,25 @@ Tutor Group:  {}""".format(data[0],data[1],data[2],data[3],data[4],data[5],data[
         print("""------------------
 Student not found.""")
 
+def register():
+
+    absent = ""
+
+    f=open("Student details.txt","r")
+    line=f.readline()
+    data=line.split(',')
+
+    print("Use Y/N to mark if a student is present!")
+    for i in range(12):
+        x = ""
+        x = input(print(data[1],data[2],""))
+        if x == "Y":
+            absent = "Present"
+        elif x == "N":
+            absent = "Absent"
+    
+
+
 def report():
     search=input("Enter student ID:")  #output_data() but formatted and can add description
     f=open("Student details.txt","r")
@@ -134,7 +153,8 @@ Would you like to:
 1:Enter student details
 2:Retrieve student details
 3:Create a report
-4:log out
+4:Take Register
+5:log out
 >""")
     if action=="1":
         input_data()
@@ -143,4 +163,6 @@ Would you like to:
     elif action=="3":
         report()
     elif action=="4":
+        register()
+    elif action=="5":
         access=False
